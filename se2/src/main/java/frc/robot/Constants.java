@@ -36,5 +36,5 @@ public static final double diamS = 6*inchS;
 public static final double peremiterS = diam*Math.PI;
 public static final int gearRatioS = 1;
 public static final int pulsePerRotationS = 2048;
-public static final double meterIndicatorS = 1/peremiter*gearRatioS*pulsePerRotation;
+public static final double pulsesPerMeterS = gearRatioS * pulsePerRotation / peremiterS;
 }
