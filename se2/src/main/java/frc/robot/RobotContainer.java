@@ -6,8 +6,11 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.ShooterExperiment;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.InstantCommand;
+import edu.wpi.first.wpilibj2.command.WaitCommand;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -34,7 +37,10 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An ExampleCommand will run in autonomous
-    return null;
+    // return new InstantCommand(() -> shoot.setP(0.2), shoot).andThen(new WaitCommand(2),
+    // new InstantCommand(()->SmartDashboard.putNumber("Vel cal", shoot.getVelocity()), shoot), 
+    // new InstantCommand(()-> shoot.setP(0), shoot));
+    return new InstantCommand(() -> shoot.setV(16), shoot);
   }
   private static RobotContainer me;
  

@@ -26,11 +26,11 @@ public final class Constants {
     public static final double kp = 0;
     public static final double ki = 0;
     public static final double kd = 0;
-    public static final double kpMotor = 0.005;
-    public static final double kiMotor = 0.00;
-    public static final double kdMotor = 0;
-    public static final double shooterKs = 0.02;
-    public static final double shooterKv = 0.03;
+    public static final double kpMotor = 0.3;
+    public static final double kiMotor = 0.0;
+    public static final double kdMotor = 0.0;
+    public static final double shooterKs = 0.257554;
+    public static final double shooterKv = 0.00311;
     public static final double inchS = 0.0254;
 public static final double diamS = 6*inchS;
 public static final double peremiterS = diam*Math.PI;

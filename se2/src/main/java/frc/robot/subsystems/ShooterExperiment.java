@@ -33,6 +33,7 @@ public class ShooterExperiment extends SubsystemBase {
     }
 
     public void setV(double v) {
+        
         motor.set(ControlMode.Velocity, v*Constants.pulsesPerMeterS/10, 
                 DemandType.ArbitraryFeedForward, ff.calculate(v));
     }
@@ -44,12 +45,12 @@ public class ShooterExperiment extends SubsystemBase {
     @Override
     public void initSendable(SendableBuilder builder) {
         builder.addDoubleProperty("Velocity", this::getVelocity, null);
-        builder.addDoubleProperty("Error", motor::getClosedLoopError, null);
+         builder.addDoubleProperty("Error", motor::getClosedLoopError, null);
         builder.addDoubleProperty("Output", motor::getMotorOutputPercent, null);
         builder.addDoubleProperty("Setpoint", motor::getClosedLoopTarget, null);
 
-        builder.addDoubleProperty("Target Velocity", null, (num) -> {targetVelocity = num;});
-        SmartDashboard.putData(new RunCommand(() -> setV(targetVelocity), this));
+        // builder.addDoubleProperty("Target Velocity", null, (num) -> {targetVelocity = num;});
+        // SmartDashboard.putData(new RunCommand(() -> setV(8), this));
 
         super.initSendable(builder);
     }
