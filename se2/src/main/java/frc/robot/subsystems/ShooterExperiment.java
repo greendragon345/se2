@@ -16,7 +16,6 @@ public class ShooterExperiment extends SubsystemBase {
 
     private final TalonFX motor;
     private final SimpleMotorFeedforward ff;
-    private double targetVelocity;
 
     public ShooterExperiment() {
         motor = new TalonFX(Constants.motorPortNum);
@@ -26,7 +25,6 @@ public class ShooterExperiment extends SubsystemBase {
         motor.config_kP(0, Constants.kpMotor);
         motor.config_kI(0, Constants.kiMotor);
 
-        targetVelocity = 0;
     
 
     }
