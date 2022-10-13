@@ -40,9 +40,9 @@ public class RobotContainer {
     // return new InstantCommand(() -> shoot.setP(0.2), shoot).andThen(new WaitCommand(2),
     // new InstantCommand(()->SmartDashboard.putNumber("Vel cal", shoot.getVelocity()), shoot), 
     // new InstantCommand(()-> shoot.setP(0), shoot));
-    return new InstantCommand(() -> shoot.setV(16), shoot);
+    return null;
   }
-  private static RobotContainer me;
+  private static RobotContainer me = null;
  
   private ShooterExperiment shoot;
 
@@ -55,5 +55,6 @@ public class RobotContainer {
 
   private RobotContainer() {
     shoot = new ShooterExperiment();
+    me = this;
   }
 }
