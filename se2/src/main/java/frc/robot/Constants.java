@@ -33,8 +33,14 @@ public final class Constants {
     public static final double shooterKv = 0.00311;
     public static final double inchS = 0.0254;
 public static final double diamS = 6*inchS;
-public static final double peremiterS = diam*Math.PI;
+public static final double peremiterS = diamS*Math.PI;
 public static final int gearRatioS = 1;
 public static final int pulsePerRotationS = 2048;
 public static final double pulsesPerMeterS = gearRatioS * pulsePerRotation / peremiterS;
+
+public static final double ks = 0.0553498824383413;
+public static final double kv = 0.0160399011852366;
+public static final double kv2 = 0.000121548264409917;
+
+
 }

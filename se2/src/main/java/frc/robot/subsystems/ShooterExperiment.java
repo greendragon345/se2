@@ -33,11 +33,15 @@ public class ShooterExperiment extends SubsystemBase {
         motor.set(ControlMode.PercentOutput, p);
     }
 
+    public double calcFF(double v) {
+        return Constants.ks + Constants.kv*v + Constants.kv2*v*v;
+    }
+
     public void setV(double v) {
         SmartDashboard.putNumber("setpoint true", v*Constants.pulsesPerMeterS/10);
         SmartDashboard.putNumber("v true", v);
         motor.set(ControlMode.Velocity, v*Constants.pulsesPerMeterS/10, 
-                DemandType.ArbitraryFeedForward, ff.calculate(v));
+                DemandType.ArbitraryFeedForward, calcFF(v));
     }
 
     public double getVelocity() {
